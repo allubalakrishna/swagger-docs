@@ -61,6 +61,18 @@
               "type": "boolean",
               "description": "publish",
               "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "post[fghdfghdf]",
+              "type": "string",
+              "description": "pubfghdfghdflish",
+              "required": true,
+              "enum": [
+                "aa",
+                "bb",
+                "cc"
+              ]
             }
           ],
           "nickname": "Api::V1::Posts#create",

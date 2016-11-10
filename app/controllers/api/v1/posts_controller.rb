@@ -8,6 +8,7 @@ module Api
         param :header, :Authoraization, :string, :required, 'To authorize the requests.'
         param :form, 'post[name]', :string, :required, 'name'
         param :form, 'post[publish]', :boolean, :required, 'publish'
+        param :form, 'post[fghdfghdf]', :string, :required, 'pubfghdfghdflish', enum: [:aa, :bb, :cc]
       end
       swagger_api :index do
         summary 'Get all the posts'
@@ -27,7 +28,7 @@ module Api
         response :unauthorized
         response :ok, "Success"
       end
-
+     
       # GET /posts
       def index
         @posts = Post.all
@@ -45,7 +46,7 @@ module Api
         @post = Post.new(post_params)
 
         if @post.save
-          render json: @post, status: :created, location: @post
+          render json: @post, status: :created
         else
           render json: @post.errors, status: :unprocessable_entity
         end
